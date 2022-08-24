@@ -21,13 +21,13 @@ pipeline {
         }
         stage('Hello') {
             options {
-                lock(label: 'swm1', quantity: 1, variable: 'SWM1');
+                lock(label: 'swm1', quantity: 1, variable: 'name');
             }
             steps {
                 echo "Section: Verifying parameters"
                 sh """
                     sleep 10
-                    echo ${SWM1}
+                    echo ${name}
                 """
             }
         }
