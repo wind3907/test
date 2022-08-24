@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo "Section: Verifying parameters"
                 sh """
-                    sleep 10
+                    sleep 30
                     echo ${name}
                 """
             }
