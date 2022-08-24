@@ -10,7 +10,6 @@ properties(
 )
 pipeline {
     agent { label 'master' }
-    en
     stages {
         stage('Test') {
             steps {
