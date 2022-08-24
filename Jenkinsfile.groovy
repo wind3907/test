@@ -21,7 +21,7 @@ pipeline {
         }
         stage('Hello') {
             options {
-                lock(label: Integer.parseInt(${env.BUILD_NUMBER}) % 2 == 0 ? 'swm1' : 'swm2', quantity: 1, variable: 'name');
+                lock(label: Integer.parseInt({env.BUILD_NUMBER}) % 2 == 0 ? 'swm1' : 'swm2', quantity: 1, variable: 'name');
             }
             steps {
                 echo "Section: Verifying parameters"
