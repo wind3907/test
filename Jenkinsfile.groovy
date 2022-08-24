@@ -19,8 +19,6 @@ pipeline {
                 """
             }
         }
-    }
-    stages {
         stage('Hello') {
             steps {
                 echo "Section: Verifying parameters"
