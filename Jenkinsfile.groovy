@@ -20,10 +20,14 @@ pipeline {
             }
         }
         stage('Hello') {
+            options {
+                lock(label: 'swm1', quantity: 1, variable: 'SWM1');
+            }
             steps {
                 echo "Section: Verifying parameters"
                 sh """
-                    echo "hi"
+                    sleep 10
+                    echo ${SWM1}
                 """
             }
         }
